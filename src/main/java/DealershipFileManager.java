@@ -1,2 +1,58 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class DealershipFileManager {
-}
+
+    public Dealership getDealership(){
+
+        String fileName = "inventory.csv";
+        try {
+            // Ensure the file exists – create a blank one if needed.
+            File inputFile = new File(fileName);
+            if (inputFile.createNewFile()) {
+                System.out.println("Created new data file: " + fileName);
+            }
+
+            BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+
+            String line = reader.readLine();
+            String[] fields = line.split("\\|");
+            String name = fields[0];
+            String address = fields[1];
+            String phone = fields[2];
+            Dealership firstDealership = new Dealership(name, address, phone);
+
+
+            while ((line = reader.readLine()) != null) {
+                fields = line.split("\\|");             // 8 parts expected
+                int vin = Integer.parseInt(fields[0]);
+                int year = Integer.parseInt(fields[1]);
+                String make = fields[2];
+                String model = fields[3];
+                String vehicleType = fields[4];
+                String vehicleColor = fields[5];
+                int odometer = Integer.parseInt(fields[6]);
+                double price = Double.parseDouble(fields[7]);
+
+                Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, vehicleColor, odometer, price);
+                firstDealership.addVehicle(vehicle);
+
+            }
+            reader.close();
+            return firstDealership;
+        } catch (IOException ioException) {
+            System.out.println("Error reading data file: " + ioException.getMessage());
+            return null;
+        }
+
+    }
+
+   public void saveDealership(Dealership dealership){
+
+        
+   }
+
+
+    }
