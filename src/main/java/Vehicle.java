@@ -14,6 +14,12 @@ public class Vehicle {
         this.price = price;
     }
 
+    @Override
+    public String toString() {
+        String stringVehicle = String.format("| Make: %s | Model: %s | Vehicle Type: %s | Color: %s | VIN: %s | Year: %s | Odometer: %s | Price: %s |",
+                make, model, vehicleType, color, vin, year, odometer, price);
+        String stringBorder = "+" + "-".repeat(stringVehicle.length()-2) + "+";
 
-
+        return stringVehicle + "\n" + stringBorder;
+    }
 }
