@@ -24,17 +24,15 @@ public class UserInterface {
                 case 6:
                 case 7:
                     processGetAllVehiclesRequest();
+                    break;
                 case 8:
                 case 9:
                 case 99:
                     displaying = false;
                     break;
 
-
             }
-
-
-
+            scanner.close();
         }
 
     }
@@ -49,7 +47,7 @@ public class UserInterface {
     public void processGetByMileageRequest() {}
     public void processGetByVehicleTypeRequest() {}
     public void processGetAllVehiclesRequest() {
-        displayVehicles(dealership.inventory);
+        displayVehicles(dealership.getAllVehicles());
     }
     public void processAddVehicleRequest() {}
     public void processRemoveVehicleRequest() {}
@@ -68,11 +66,12 @@ public class UserInterface {
                 | 9 - Remove a vehicle                              |
                 | 99 - Quit                                         |
                 +---------------------------------------------------+
-                Please select an option: """);
+                Please select an option:\s""");
 
     }
     private void displayVehicles(ArrayList<Vehicle> inventory){
 
+        System.out.println("=".repeat(140));
         for (Vehicle i : inventory) {
             System.out.println(i);
         }

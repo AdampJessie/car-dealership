@@ -16,7 +16,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        String stringVehicle = String.format("| Make: %s | Model: %s | Vehicle Type: %s | Color: %s | VIN: %s | Year: %s | Odometer: %s | Price: %s |",
+        String stringVehicle = String.format("| Make: %-8s | Model: %-9s | Vehicle Type: %-5s | Color: %-6s | VIN: %-6s | Year: %-5s | Odometer: %-6s | Price: %-8.2f |",
                 make, model, vehicleType, color, vin, year, odometer, price);
         String stringBorder = "+" + "-".repeat(stringVehicle.length()-2) + "+";
 
