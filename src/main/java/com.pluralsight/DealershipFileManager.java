@@ -1,7 +1,7 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+package com.pluralsight;
+
+
+import java.io.*;
 
 public class DealershipFileManager {
 
@@ -50,5 +50,20 @@ public class DealershipFileManager {
     }
    public void saveDealership(Dealership dealership){
 
+       String fileName = "inventory.csv";
+       try {
+       BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+           writer.write(String.format("%s|%s|%s", dealership.getName(), dealership.getAddress(), dealership.getPhone()));
+
+           for (Vehicle vehicle : dealership.getAllVehicles()){
+               writer.write(String.format("\n%s|%s|%s|%s|%s|%s|%s|%s",
+                       vehicle.getVin(), vehicle.getYear(), vehicle.getMake(), vehicle.getModel(), vehicle.getVehicleType(), vehicle.getColor(), vehicle.getOdometer(), vehicle.getPrice()));
+           }
+
+
+       }catch (IOException e){
+           System.out.println("Error reading data file: " + e);
+           }
+       }
+
    }
-    }
