@@ -1,11 +1,17 @@
 # Car Dealership
 
 ## Description of the Project
-
+This is a virtual car dealership, fully outfitted with an inventory of vehicles to search and choose from. The program
+reads from a file, populates the dealership, allows for modification, and then saves any changes to the dealership when
+the user exits the program. Currently, searching allows users to input year, price, mileage, make/model, color, or vehicle 
+type to search for their dream car.
 
 
 ## User Stories
-
+- As an owner, I'd like to add a dealership as an object containing an inventory of vehicles so that I may contain my inventory in one organized spot and potentially add more dealerships.
+- As an owner, I'd like read input from a file so that I may upload raw information to be swiftly organized and easily modifiable.
+- As a customer, I'd like an intuitive menu so that I may select from a range of options and reduce the hassle of searching for and buying a car.
+- As a customer, I'd like the ability to search for specific vehicles so that I may find the exact car that I'd like from a selection.
 
 ## Setup
 
@@ -31,22 +37,23 @@ Follow these steps to get your application running within IntelliJ IDEA:
 
 ## Demo
 
-![Full Demonstration]()
+![Full Demonstration](DEMO.gif)
 
 ## Future Work
 
-- Writing to CSV file, saving personal profiles.
 - Improvement of error handling, improvement of performance.
+- More dealerships!
 
 ## Resources
 
 - [Raymond Maroun's GitHub](https://github.com/RayMaroun/yearup-spring-section-10-2025/tree/master/pluralsight) - Vital Information
 - [Previous Java Project](https://github.com/AdampJessie/FinancialTracker) - Very Similar Project, recently completed
 - [ChatGPT](https://chatgpt.com/) - Syntax/Formatting Assistance
+- [Potato Sensei](https://chatgpt.com/g/g-681d378b0c90819197b16e49abe384ec-potato-sensei) - Necessary review, wonderful potato puns
 
 ## Team Members
 
-- **Adam Jessie** - Logic/Formatting.
+- **Adam Jessie** - Front-back!
 
 ## Thanks
 
