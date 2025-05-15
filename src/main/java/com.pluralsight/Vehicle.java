@@ -84,7 +84,7 @@ public class Vehicle {
     public String toString() {
         String stringVehicle = String.format("| Make: %-8s | Model: %-9s | Vehicle Type: %-5s | Color: %-6s | VIN: %-6s | Year: %-5s | Odometer: %-6s | Price: %-8.2f |",
                 make, model, vehicleType, color, vin, year, odometer, price);
-        String stringBorder = "+" + "-".repeat(stringVehicle.length()-2) + "+";
+        String stringBorder = "+" + "-".repeat(stringVehicle.length() - 2) + "+";
 
         return stringVehicle + "\n" + stringBorder;
     }

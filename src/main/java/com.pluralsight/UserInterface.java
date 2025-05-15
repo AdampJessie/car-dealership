@@ -92,17 +92,16 @@ public class UserInterface {
                     exitSave();
                     displaying = false;
                     break;
-
             }
-
         }
-
+        userInput.close();
     }
 
     private void init() {
         DealershipFileManager loader = new DealershipFileManager();
         this.dealership = loader.getDealership();
     }
+
     private void exitSave() {
         DealershipFileManager saver = new DealershipFileManager();
         saver.saveDealership(this.dealership);
@@ -217,7 +216,7 @@ public class UserInterface {
         System.out.print("Please enter the mileage of the vehicle: ");
         int odometer = Integer.parseInt(userInput.nextLine().trim());
         System.out.println("-".repeat(50));
-        System.out.print("Please enter the VIN belonging to the vehicle: ");
+        System.out.print("Please enter the unique VIN belonging to the vehicle: ");
         int vin = Integer.parseInt(userInput.nextLine().trim());
         System.out.println("-".repeat(50));
 
@@ -244,8 +243,6 @@ public class UserInterface {
         if (!dealership.inventory.contains(selectedVehicle))
             System.out.println("Success! Vehicle removed.");
         else System.out.println("Something went wrong! Vehicle not removed.");
-
-
     }
 
     private void displayMenu() {
@@ -264,7 +261,7 @@ public class UserInterface {
                 | 9 - Remove a vehicle                              |
                 | 99 - Quit                                         |
                 +---------------------------------------------------+
-                Please select an option:\s""", "Welcome to "+dealership.getName()+"!");
+                Please select an option:\s""", "Welcome to " + dealership.getName() + "!");
 
     }
 
